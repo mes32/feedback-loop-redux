@@ -36,6 +36,7 @@ class App extends Component {
             <Route exact path="/admin" component={AdminReview} />
           </div>
         </Router>
+        <Review />
       </div>
     );
   }

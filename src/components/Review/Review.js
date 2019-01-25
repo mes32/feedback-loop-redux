@@ -2,9 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Review extends Component {
+
+    renderSubmitButton() {
+        const complete = false;
+        if (complete) {
+            return (<button>Submit</button>);
+        } else {
+            return (<button disabled>Incomplete</button>);
+        }
+        
+    }
+
     render() {
         return (
-            <p>[Review]</p>
+            <div>
+                <h2>Review Your Feedback</h2>
+                <p>Feelings: ---</p>
+                <p>Understanding: ---</p>
+                <p>Support: ---</p>
+                <p>Comments: ---</p>
+                {this.renderSubmitButton()}
+            </div>
         );
     }
 }
