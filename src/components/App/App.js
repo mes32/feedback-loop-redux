@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
+import Feelings from '../Feelings/Feelings.js';
 
 class App extends Component {
   render() {
@@ -24,8 +25,8 @@ class App extends Component {
             </p>
 
             {/* Routes */}
-            {/* <Route exact path="/form-part-1" component={Feelings} />
-            <Route exact path="/form-part-2" component={Understanding} />
+            <Route exact path="/form-part-1" component={Feelings} />
+            {/* <Route exact path="/form-part-2" component={Understanding} />
             <Route exact path="/form-part-3" component={Support} />
             <Route exact path="/form-part-4" component={Comments} />
             <Route exact path="/form-review" component={Review} />
