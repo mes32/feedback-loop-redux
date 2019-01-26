@@ -53,8 +53,9 @@ class Review extends Component {
             data: feeback,
         }).then((response) => {
             console.log(response);
-            // TODO: Send browser to confirmation/thank-you page url
-            // this.props.history.push('/thank-you');
+            console.log(this.props);
+            
+            // this.props.history.push('/form-confirmation');
         }).catch((error) => {
             // TODO: Optimize error display for users
             const errorMessage = `Server error: ${error}`;

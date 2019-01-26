@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import AdminReview from '../AdminReview/AdminReview.js';
 import Comments from '../Comments/Comments.js';
+import Confirmation from '../Confirmation/Confirmation.js'
 import Feelings from '../Feelings/Feelings.js';
 import Header from '../Header/Header.js';
 import Review from '../Review/Review.js';
@@ -14,9 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
         <Router>
           <div>
+            <Header />
             {/* Links */}
             <p>
               [<Link to="/form-part-1">Part 1</Link>]
@@ -33,11 +34,12 @@ class App extends Component {
             <Route exact path="/form-part-2" component={Understanding} />
             <Route exact path="/form-part-3" component={Support} />
             <Route exact path="/form-part-4" component={Comments} />
+            <Route exact path="/form-confirmation" component={Confirmation} />
             {/* <Route exact path="/form-review" component={Review} /> */}
             <Route exact path="/admin" component={AdminReview} />
+            <Review history={this.props.history} />
           </div>
         </Router>
-        <Review />
       </div>
     );
   }
