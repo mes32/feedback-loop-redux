@@ -25,10 +25,18 @@ const understandingRating = (state = 0, action) => {
     return state;
 }
 
+const supportRating = (state = 0, action) => {
+    if (action.type === 'SET_SUPPORT_RATING') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     combineReducers({
         feelingsRating,
         understandingRating,
+        supportRating,
     }),
     applyMiddleware(logger),
 );

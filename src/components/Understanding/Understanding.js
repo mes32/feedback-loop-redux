@@ -19,7 +19,7 @@ class Understanding extends Component {
     // Set the current rating to that number. Check if that number is valid and
     // the 'Next' button should therefore be enabled.
     enteredNumber = (event) => {
-        const rating = Number(event.target.value);
+        const rating = parseInt(event.target.value);
         const readyNext = this.ratingIsValid(rating);
         this.setState({
             rating,
