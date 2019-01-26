@@ -36,7 +36,7 @@ class Feelings extends Component {
     }
 
     // When the 'Next' button is pressed...
-    // Set the feelings rating reducing to equal the current rating. Move the
+    // Set the feelings rating reducer to equal the current rating. Move the
     // user's web browser to /form-part-2.
     pressedNext = (event) => {
         const action = {

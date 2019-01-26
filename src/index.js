@@ -11,8 +11,15 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const feelingsRating = (state = null, action) => {
+const feelingsRating = (state = 0, action) => {
     if (action.type === 'SET_FEELINGS_RATING') {
+        return action.payload;
+    }
+    return state;
+}
+
+const understandingRating = (state = 0, action) => {
+    if (action.type === 'SET_UNDERSTANDING_RATING') {
         return action.payload;
     }
     return state;
@@ -21,6 +28,7 @@ const feelingsRating = (state = null, action) => {
 const storeInstance = createStore(
     combineReducers({
         feelingsRating,
+        understandingRating,
     }),
     applyMiddleware(logger),
 );

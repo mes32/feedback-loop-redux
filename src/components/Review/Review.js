@@ -18,7 +18,7 @@ class Review extends Component {
             <div>
                 <h2>Review Your Feedback</h2>
                 <p>Feelings: {this.props.rs.feelingsRating}</p>
-                <p>Understanding: ---</p>
+                <p>Understanding: {this.props.rs.understandingRating}</p>
                 <p>Support: ---</p>
                 <p>Comments: ---</p>
                 {this.renderSubmitButton()}
