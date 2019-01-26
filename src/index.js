@@ -11,23 +11,40 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const feelingsRating = (state = 0, action) => {
+const DEFAULT_STATE = '';
+
+const feelingsRating = (state = DEFAULT_STATE, action) => {
     if (action.type === 'SET_FEELINGS_RATING') {
         return action.payload;
+    } else if (action.type === 'RESET_ALL') {
+        return DEFAULT_STATE;
     }
     return state;
 }
 
-const understandingRating = (state = 0, action) => {
+const understandingRating = (state = DEFAULT_STATE, action) => {
     if (action.type === 'SET_UNDERSTANDING_RATING') {
         return action.payload;
+    } else if (action.type === 'RESET_ALL') {
+        return DEFAULT_STATE;
     }
     return state;
 }
 
-const supportRating = (state = 0, action) => {
+const supportRating = (state = DEFAULT_STATE, action) => {
     if (action.type === 'SET_SUPPORT_RATING') {
         return action.payload;
+    } else if (action.type === 'RESET_ALL') {
+        return DEFAULT_STATE;
+    }
+    return state;
+}
+
+const comments = (state = DEFAULT_STATE, action) => {
+    if (action.type === 'SET_COMMENTS') {
+        return action.payload;
+    } else if (action.type === 'RESET_ALL') {
+        return DEFAULT_STATE;
     }
     return state;
 }
@@ -37,6 +54,7 @@ const storeInstance = createStore(
         feelingsRating,
         understandingRating,
         supportRating,
+        comments,
     }),
     applyMiddleware(logger),
 );

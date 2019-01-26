@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Feelings extends Component {
+class Header extends Component {
     render() {
         return (
             <header className="App-header">
@@ -13,4 +13,4 @@ class Feelings extends Component {
 }
 
 const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Feelings);
+export default connect(mapReduxStoreToProps)(Header);

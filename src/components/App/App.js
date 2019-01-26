@@ -28,11 +28,12 @@ class App extends Component {
             </p>
 
             {/* Routes */}
+            <Route exact path="/" component={Feelings} />
             <Route exact path="/form-part-1" component={Feelings} />
             <Route exact path="/form-part-2" component={Understanding} />
             <Route exact path="/form-part-3" component={Support} />
             <Route exact path="/form-part-4" component={Comments} />
-            <Route exact path="/form-review" component={Review} />
+            {/* <Route exact path="/form-review" component={Review} /> */}
             <Route exact path="/admin" component={AdminReview} />
           </div>
         </Router>
