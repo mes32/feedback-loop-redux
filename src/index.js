@@ -11,13 +11,16 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const dummyReducer = (state = [], action) => {
+const feelingsRating = (state = null, action) => {
+    if (action.type === 'SET_FEELINGS_RATING') {
+        return action.payload;
+    }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        dummyReducer,
+        feelingsRating,
     }),
     applyMiddleware(logger),
 );
