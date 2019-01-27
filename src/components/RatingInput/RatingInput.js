@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header.js';
 import Rating from '../../classes/Rating.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
 
@@ -40,6 +41,7 @@ class RatingInput extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <h2>{this.props.prompt}</h2>
                 <input onChange={this.enteredNumber} type="number" placeholder="(1 thru 5)" />
                 <button onClick={this.pressedNext} disabled={!this.state.readyNext}>Next</button>
@@ -49,5 +51,4 @@ class RatingInput extends Component {
     }
 }
 
-const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(RatingInput);
+export default connect()(RatingInput);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
 
 // This component prompts the user for miscellaneous comments
@@ -9,11 +10,11 @@ class Review extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <ReviewCard history={this.props.history} />
             </div>
         );
     }
 }
 
-const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Review);
+export default connect()(Review);

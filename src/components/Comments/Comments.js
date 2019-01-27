@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
 
 // This component prompts the user for miscellaneous comments
@@ -36,6 +37,7 @@ class Comments extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <h2>Any comments you want to leave?</h2>
                 <input onChange={this.enteredText} type="text" placeholder="...your thoughts" />
                 <button onClick={this.pressedNext}>Next</button>
@@ -45,5 +47,4 @@ class Comments extends Component {
     }
 }
 
-const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Comments);
+export default connect()(Comments);

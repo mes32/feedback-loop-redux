@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header/Header.js';
 
 // This thanks the user for completing feeback and prompts them to start over
 class Confirmation extends Component {
@@ -16,6 +17,7 @@ class Confirmation extends Component {
     render() {
         return (
             <div>
+                <Header heading='Thank You!' />
                 <h2>Thank you for your feedback</h2>
                 <button onClick={this.pressedContinue}>Leave New Feedback</button>
             </div>
@@ -23,5 +25,4 @@ class Confirmation extends Component {
     }
 }
 
-const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Confirmation);
+export default connect()(Confirmation);
