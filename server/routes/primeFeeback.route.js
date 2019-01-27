@@ -22,7 +22,9 @@ router.post('/', (req, res) => {
 // Returns all feeback entries when requested via GET /prime-feeback
 router.get('/', (req, res) => {
     const sqlText = `
-    SELECT id, feeling, understanding, support, comments FROM "feedback";
+    SELECT id, feeling, understanding, support, comments FROM "feedback"
+        ORDER BY id DESC
+        LIMIT 200;
     `;
     pool.query(sqlText).then(function (sqlResult) {
         res.send(sqlResult.rows);
