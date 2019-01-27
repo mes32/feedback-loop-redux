@@ -14,7 +14,7 @@ class AdminReview extends Component {
 
     // Will run after the page mounts
     componentDidMount() {
-        // this.getFeedback();
+        this.getFeedback();
     }
 
     // Request all user feedback from the server (via route GET /prime-feedback)
@@ -22,7 +22,7 @@ class AdminReview extends Component {
         axios({
             method: 'GET',
             url: '/prime-feedback',
-        }).then((response) => {
+        }).then((response) => {            
             this.setState({
                 feedbackArray: response.data,
             });

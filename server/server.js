@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-app.use('/prime-feeback', primeFeedbackRouter);
+app.use('/prime-feedback', primeFeedbackRouter);
 
 
 /** ---------- START SERVER ---------- **/

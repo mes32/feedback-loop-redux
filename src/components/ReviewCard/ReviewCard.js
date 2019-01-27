@@ -49,7 +49,7 @@ class ReviewCard extends Component {
         };
         axios({
             method: 'POST',
-            url: '/prime-feeback',
+            url: '/prime-feedback',
             data: feeback,
         }).then((response) => {
             this.props.history.push('/form-confirmation');
