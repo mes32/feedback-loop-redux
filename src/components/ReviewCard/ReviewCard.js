@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 class ReviewCard extends Component {
 
     // If the rating has not yet been set, returns a placeholder character
-    ratingOrSpacer(rating) {
+    ratingOrSpacer = (rating) => {
         if (rating) {
             return rating;
         } else {
@@ -18,25 +18,15 @@ class ReviewCard extends Component {
     // Builds a 'Submit' button for the current feeback dataset. Changes button 
     // to enabled with different text when the feeback is complete and ready to
     // POST to the server.
-    submitButton() {
-        const ready = this.readyToSubmit();
-        if (ready) {
-            return (<button onClick={this.submit}>Submit</button>);
-        } else {
-            return (<button disabled>Incomplete</button>);
-        } 
-    }
-
-    // Returns true if all required fields are filled out and this dataset is 
-    // ready to submit to the server.
-    readyToSubmit() {
+    submitButton = () => {
         const feeling = this.props.rs.feeling;
         const understanding = this.props.rs.understanding;
         const support = this.props.rs.support;
         if (feeling && understanding && support) {
-            return true;
-        }
-        return false;
+            return (<button onClick={this.submit}>Submit</button>);
+        } else {
+            return (<button disabled>Incomplete</button>);
+        } 
     }
 
     // Sends the user's feedback to the server (via POST /prime-feeback)
@@ -49,7 +39,7 @@ class ReviewCard extends Component {
         };
         axios({
             method: 'POST',
-            url: '/prime-feeback',
+            url: '/prime-feedback',
             data: feeback,
         }).then((response) => {
             this.props.history.push('/form-confirmation');
@@ -66,13 +56,14 @@ class ReviewCard extends Component {
         const feeling = this.ratingOrSpacer(this.props.rs.feeling);
         const understanding = this.ratingOrSpacer(this.props.rs.understanding);
         const support = this.ratingOrSpacer(this.props.rs.support);
+        const comments = this.props.rs.comments;
         return (
             <div>
                 <h2>Review Your Feedback</h2>
                 <p>Feelings: {feeling}</p>
                 <p>Understanding: {understanding}</p>
                 <p>Support: {support}</p>
-                <p>Comments: {this.props.rs.comments}</p>
+                <p>Comments: {comments}</p>
                 {this.submitButton()}
             </div>
         );
