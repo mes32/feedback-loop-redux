@@ -70,7 +70,7 @@ npm run client
 ![Screen Shot of Form Confirmation](./wireframes/screen-shot-form-confirmation.png)
 
 ### Admin Page
-**http://localhost:3000/#/form-admin**
+**http://localhost:3000/#/admin**
 ![Screen Shot of Admin Page](./wireframes/screen-shot-admin.png)
 
 ## Documentation
