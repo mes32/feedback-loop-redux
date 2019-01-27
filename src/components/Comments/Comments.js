@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReviewCard from '../ReviewCard/ReviewCard.js';
 
 // This component prompts the user for miscellaneous comments
 class Comments extends Component {
@@ -38,6 +39,7 @@ class Comments extends Component {
                 <h2>Any comments you want to leave?</h2>
                 <input onChange={this.enteredText} type="text" placeholder="...your thoughts" />
                 <button onClick={this.pressedNext}>Next</button>
+                <ReviewCard history={this.props.history} />
             </div>
         );
     }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // This component allows the user to review their feeback before submitting it
 // to the server.
-class Review extends Component {
+class ReviewCard extends Component {
 
     // If the rating has not yet been set, returns a placeholder character
     ratingOrSpacer(rating) {
@@ -83,4 +83,4 @@ class Review extends Component {
 }
 
 const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Review);
+export default connect(mapReduxStoreToProps)(ReviewCard);

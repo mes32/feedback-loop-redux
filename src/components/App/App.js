@@ -7,7 +7,7 @@ import Comments from '../Comments/Comments.js';
 import Confirmation from '../Confirmation/Confirmation.js'
 import Feelings from '../Feelings/Feelings.js';
 import Header from '../Header/Header.js';
-import Review from '../Review/Review.js';
+import ReviewCard from '../ReviewCard/ReviewCard.js';
 import Support from '../Support/Support.js';
 import Understanding from '../Understanding/Understanding.js';
 
@@ -37,7 +37,6 @@ class App extends Component {
             <Route exact path="/form-confirmation" component={Confirmation} />
             {/* <Route exact path="/form-review" component={Review} /> */}
             <Route exact path="/admin" component={AdminReview} />
-            <Review history={this.props.history} />
           </div>
         </Router>
       </div>
