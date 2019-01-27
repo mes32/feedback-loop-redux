@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Rating from '../../classes/Rating.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
-
-const MIN_RATING = 1;
-const MAX_RATING = 5;
 
 // This component prompts the user to rate their current emotional state
 class Feelings extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            rating: 0,
+            rating: new Rating(),
             readyNext: false,
         }
     }
@@ -19,21 +17,11 @@ class Feelings extends Component {
     // Set the current rating to that number. Check if that number is valid and
     // the 'Next' button should therefore be enabled.
     enteredNumber = (event) => {
-        const rating = parseInt(event.target.value);
-        const readyNext = this.ratingIsValid(rating);
+        const rating = new Rating(event.target.value);
         this.setState({
-            rating,
-            readyNext,
+            rating: rating,
+            readyNext: rating.isValid(),
         });
-    }
-
-    // Return true if the current rating is usable
-    ratingIsValid(rating) {
-        if (rating < MIN_RATING || rating > MAX_RATING) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     // When the 'Next' button is pressed...
@@ -42,7 +30,7 @@ class Feelings extends Component {
     pressedNext = (event) => {
         const action = {
             type: 'SET_FEELINGS_RATING',
-            payload: this.state.rating,
+            payload: this.state.rating.value,
         };
         this.props.dispatch(action);
         this.props.history.push('/form-part-2');
