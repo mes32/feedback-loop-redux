@@ -2,6 +2,7 @@
 const MIN_RATING = 1;
 const MAX_RATING = 5;
 
+// Represents the rating scale 1, 2, 3, 4, 5
 class Rating {
     constructor(input) {
         const newValue = parseInt(input);
@@ -10,6 +11,7 @@ class Rating {
         }
     }
 
+    // Returns true if the current value is defined and usable 
     isValid() {
         if (this.value) {
             return true;
