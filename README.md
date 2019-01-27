@@ -2,10 +2,10 @@
 This is a daily student feedback form similar to the form used at [Prime Digital Academy](https://primeacademy.io/). This application features a multi-page submission process with the student answering one survey question per page. It relies heavily on [Redux](https://redux.js.org/) to keep all this data easily accessible from the submission page.
 
 ## Utilized Web Stack
-- `User Interface` - React
-- `Client` - React, Redux for conveniently sharing data across pages, axios for making HTTP requests to the server-side
-- `Server` - Node.js and the Express framework for handling HTTP requests from the client-side
-- `Database` - PostgreSQL via the Node.js library pg
+- `User Interface` - [React](https://reactjs.org/)
+- `Client` - React, [Redux](https://redux.js.org/) for conveniently sharing data across pages, [axios](https://www.npmjs.com/package/axios) for making HTTP requests to the server-side
+- `Server` - [Node.js](https://nodejs.org/en/) and the [Express](https://expressjs.com/) framework for handling HTTP requests from the client-side
+- `Database` - [PostgreSQL](https://www.postgresql.org/) via the Node.js library [pg](https://www.npmjs.com/package/pg)
 
 ## Getting Started
 The following steps should get a copy of the project running on your local machine. See the deployment section for notes on how to deploy the project on a live system. I recommend using the program [`Homebrew`](https://brew.sh/) for installing any needed prerequisites, but I am sure other ways work as well.
@@ -43,8 +43,17 @@ npm run server
 npm run client
 ```
 
-## Screen Shot
-(Coming soon)
+## Screen Shots
+
+### Form Part 1
+***http://localhost:3000/#/form-part-1***
+![Screen Shot of Form Part 1](./wireframes/screen-shot-form-part-1.png)
+
+### Form Part 2
+**http://localhost:3000/#/form-part-2**
+![Screen Shot of Form Part 2](./wireframes/screen-shot-form-part-2.png)
+
+
 
 ## Documentation
 This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #4. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
