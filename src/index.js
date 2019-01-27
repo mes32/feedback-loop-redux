@@ -13,8 +13,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 const DEFAULT_STATE = '';
 
-const feelingsRating = (state = DEFAULT_STATE, action) => {
-    if (action.type === 'SET_FEELINGS_RATING') {
+const feelingRating = (state = DEFAULT_STATE, action) => {
+    if (action.type === 'SET_FEELING_RATING') {
         return action.payload;
     } else if (action.type === 'RESET_ALL') {
         return DEFAULT_STATE;
@@ -51,7 +51,7 @@ const comments = (state = DEFAULT_STATE, action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        feelingsRating,
+        feelingRating,
         understandingRating,
         supportRating,
         comments,

@@ -30,10 +30,10 @@ class ReviewCard extends Component {
     // Returns true if all required fields are filled out and this dataset is 
     // ready to submit to the server.
     readyToSubmit() {
-        const feelings = this.props.rs.feelingsRating;
+        const feeling = this.props.rs.feelingRating;
         const understanding = this.props.rs.understandingRating;
         const support = this.props.rs.supportRating;
-        if (feelings && understanding && support) {
+        if (feeling && understanding && support) {
             return true;
         }
         return false;
@@ -42,7 +42,7 @@ class ReviewCard extends Component {
     // Sends the user's feedback to the server (via POST /prime-feeback)
     submit = (event) => {
         const feeback = {
-            feeling: this.props.rs.feelingsRating,
+            feeling: this.props.rs.feelingRating,
             understanding: this.props.rs.understandingRating,
             support: this.props.rs.supportRating,
             comments: this.props.rs.comments,
@@ -63,13 +63,13 @@ class ReviewCard extends Component {
 
     // Display component on page
     render() {
-        const feelings = this.ratingOrSpacer(this.props.rs.feelingsRating);
+        const feeling = this.ratingOrSpacer(this.props.rs.feelingRating);
         const understanding = this.ratingOrSpacer(this.props.rs.understandingRating);
         const support = this.ratingOrSpacer(this.props.rs.supportRating);
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                <p>Feelings: {feelings}</p>
+                <p>Feelings: {feeling}</p>
                 <p>Understanding: {understanding}</p>
                 <p>Support: {support}</p>
                 <p>Comments: {this.props.rs.comments}</p>

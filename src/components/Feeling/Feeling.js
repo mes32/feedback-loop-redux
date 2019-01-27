@@ -4,7 +4,7 @@ import Rating from '../../classes/Rating.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
 
 // This component prompts the user to rate their current emotional state
-class Feelings extends Component {
+class Feeling extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +29,7 @@ class Feelings extends Component {
     // user's web browser to /form-part-2.
     pressedNext = (event) => {
         const action = {
-            type: 'SET_FEELINGS_RATING',
+            type: 'SET_FEELING_RATING',
             payload: this.state.rating.value,
         };
         this.props.dispatch(action);
@@ -50,4 +50,4 @@ class Feelings extends Component {
 }
 
 const mapReduxStoreToProps = (rs) => { return { rs } };
-export default connect(mapReduxStoreToProps)(Feelings);
+export default connect(mapReduxStoreToProps)(Feeling);
