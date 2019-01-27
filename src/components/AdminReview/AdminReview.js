@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+import AdminFeedbackRow from '../AdminFeedbackRow/AdminFeedbackRow.js';
 import Header from '../Header/Header';
 
 // Shows the admin page
@@ -30,22 +32,32 @@ class AdminReview extends Component {
             const errorMessage = `Server error: ${error}`;
             console.log(errorMessage);
             alert(errorMessage);
-        })
+        });
     }
 
-    // Convert the feedback array into JSX so that it can be displayed on the 
-    // page.
+    // Request to delete a feedback entry from the server (via route DELETE /prime-feedback/:id)
+    deleteFeedback = (feedback) => {
+        const id = feedback.id;
+        const dialog = `Are you sure?\nRemoving this feedback entry from the database cannot be undone.\nid = ${id}`;
+        if (window.confirm(dialog, '11111111', '2222222')) {
+            axios({
+                method: 'DELETE',
+                url: `/prime-feedback/${feedback.id}`,
+            }).then((response) => {
+                this.getFeedback();
+            }).catch((error) => {
+                const errorMessage = `Server error: ${error}`;
+                console.log(errorMessage);
+                alert(errorMessage);
+            });
+        }
+    }
+
+    // Maps the feedback array from JSON to AdminFeedbackRow components
     displayFeebackArray = () => {
-        return this.state.feedbackArray.map((feedback) => {
-            return (
-                <tr key={feedback.id}>
-                    <td>{feedback.feeling}</td>
-                    <td>{feedback.understanding}</td>
-                    <td>{feedback.support}</td>
-                    <td>{feedback.comments}</td>
-                </tr>
-            );
-        });
+        return this.state.feedbackArray.map((feedback) => 
+            <AdminFeedbackRow key={feedback.id} feedback={feedback} deleteFeedback={this.deleteFeedback} />
+        );
     }
 
     // Display component on page
@@ -60,6 +72,7 @@ class AdminReview extends Component {
                             <th>Comprehension</th>
                             <th>Support</th>
                             <th>Comments</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

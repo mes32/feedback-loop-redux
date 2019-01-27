@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
     pool.query(sqlText, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments]).then(function (sqlResult) {
         res.sendStatus(201);
     }).catch(function (sqlError) {
-        console.log(`SQL error in POST /prime-feedback: ${sqlError}`);
+        console.log(`SQL error in POST /prime-feedback, ${sqlError}`);
         res.sendStatus(500);
     });
 });
@@ -27,7 +27,22 @@ router.get('/', (req, res) => {
     pool.query(sqlText).then(function (sqlResult) {
         res.send(sqlResult.rows);
     }).catch(function (sqlError) {
-        console.log(`SQL error in GET /prime-feedback: ${sqlError}`);
+        console.log(`SQL error in GET /prime-feedback, ${sqlError}`);
+        res.sendStatus(500);
+    });
+});
+
+// Deletes one feeback entry when requested via DELETE /prime-feeback/:id
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
+    const sqlText = `
+    DELETE FROM "feedback"
+        WHERE id = $1;
+    `;
+    pool.query(sqlText, [id]).then(function (sqlResult) {
+        res.sendStatus(200);
+    }).catch(function (sqlError) {
+        console.log(`SQL error in DELETE /prime-feedback/:id, ${sqlError}`);
         res.sendStatus(500);
     });
 });
