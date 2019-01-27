@@ -16,7 +16,7 @@ class Confirmation extends Component {
     render() {
         return (
             <div>
-                <h2>Thank you for your feedback!</h2>
+                <h2>Thank you for your feedback</h2>
                 <button onClick={this.pressedContinue}>Leave New Feedback</button>
             </div>
         );
