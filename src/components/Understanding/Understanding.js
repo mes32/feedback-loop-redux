@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReviewCard from '../ReviewCard/ReviewCard.js';
 
 const MIN_RATING = 1;
 const MAX_RATING = 5;
@@ -55,6 +56,7 @@ class Understanding extends Component {
                 <h2>How well are you understanding the content?</h2>
                 <input onChange={this.enteredNumber} type="number" placeholder="(1 thru 5)" />
                 <button onClick={this.pressedNext} disabled={!this.state.readyNext}>Next</button>
+                <ReviewCard history={this.props.history} />
             </div>
         );
     }

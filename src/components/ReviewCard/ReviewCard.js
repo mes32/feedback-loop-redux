@@ -52,10 +52,7 @@ class ReviewCard extends Component {
             url: '/prime-feeback',
             data: feeback,
         }).then((response) => {
-            console.log(response);
-            console.log(this.props);
-            
-            // this.props.history.push('/form-confirmation');
+            this.props.history.push('/form-confirmation');
         }).catch((error) => {
             // TODO: Optimize error display for users
             const errorMessage = `Server error: ${error}`;

@@ -7,7 +7,7 @@ import Comments from '../Comments/Comments.js';
 import Confirmation from '../Confirmation/Confirmation.js'
 import Feelings from '../Feelings/Feelings.js';
 import Header from '../Header/Header.js';
-import ReviewCard from '../ReviewCard/ReviewCard.js';
+import Review from '../Review/Review.js';
 import Support from '../Support/Support.js';
 import Understanding from '../Understanding/Understanding.js';
 
@@ -25,6 +25,7 @@ class App extends Component {
               [<Link to="/form-part-3">Part 3</Link>]
               [<Link to="/form-part-4">Part 4</Link>]
               [<Link to="/form-review">Review</Link>]
+              [<Link to="/form-confirmation">Confirmation</Link>]
               [<Link to="/admin">Admin</Link>]
             </p>
 
@@ -34,6 +35,7 @@ class App extends Component {
             <Route exact path="/form-part-2" component={Understanding} />
             <Route exact path="/form-part-3" component={Support} />
             <Route exact path="/form-part-4" component={Comments} />
+            <Route exact path="/form-review" component={Review} />
             <Route exact path="/form-confirmation" component={Confirmation} />
             {/* <Route exact path="/form-review" component={Review} /> */}
             <Route exact path="/admin" component={AdminReview} />
