@@ -74,7 +74,7 @@ npm run client
 ![Screen Shot of Admin Page](./wireframes/screen-shot-admin.png)
 
 ## Documentation
-This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #4. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
+This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #5. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
 
 ### Completed Features
 - [x] Multi-page feedback submission form (until submitted client-side data is stored using Redux)

@@ -39,7 +39,7 @@ class AdminReview extends Component {
     deleteFeedback = (feedback) => {
         const id = feedback.id;
         const dialog = `Are you sure?\nRemoving this feedback entry from the database cannot be undone.\nid = ${id}`;
-        if (window.confirm(dialog, '11111111', '2222222')) {
+        if (window.confirm(dialog)) {
             axios({
                 method: 'DELETE',
                 url: `/prime-feedback/${feedback.id}`,
