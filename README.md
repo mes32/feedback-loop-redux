@@ -46,14 +46,32 @@ npm run client
 ## Screen Shots
 
 ### Form Part 1
-***http://localhost:3000/#/form-part-1***
+**http://localhost:3000/#/form-part-1**
 ![Screen Shot of Form Part 1](./wireframes/screen-shot-form-part-1.png)
 
 ### Form Part 2
 **http://localhost:3000/#/form-part-2**
 ![Screen Shot of Form Part 2](./wireframes/screen-shot-form-part-2.png)
 
+### Form Part 3
+**http://localhost:3000/#/form-part-3**
+![Screen Shot of Form Part 3](./wireframes/screen-shot-form-part-3.png)
 
+### Form Part 4
+**http://localhost:3000/#/form-part-4**
+![Screen Shot of Form Part 4](./wireframes/screen-shot-form-part-4.png)
+
+### Form Review
+**http://localhost:3000/#/form-review**
+![Screen Shot of Form Review](./wireframes/screen-shot-form-review.png)
+
+### Form Confirmation
+**http://localhost:3000/#/form-confirmation**
+![Screen Shot of Form Confirmation](./wireframes/screen-shot-form-confirmation.png)
+
+### Admin Page
+**http://localhost:3000/#/form-admin**
+![Screen Shot of Admin Page](./wireframes/screen-shot-admin.png)
 
 ## Documentation
 This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #4. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
