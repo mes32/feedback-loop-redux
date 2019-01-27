@@ -29,7 +29,7 @@ class Feeling extends Component {
     // user's web browser to /form-part-2.
     pressedNext = (event) => {
         const action = {
-            type: 'SET_FEELING_RATING',
+            type: 'SET_FEELING',
             payload: this.state.rating.value,
         };
         this.props.dispatch(action);

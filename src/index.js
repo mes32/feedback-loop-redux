@@ -11,49 +11,50 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const DEFAULT_STATE = '';
+const DEFAULT_RATING = null;
+const DEFAULT_COMMENTS = '';
 
-const feelingRating = (state = DEFAULT_STATE, action) => {
-    if (action.type === 'SET_FEELING_RATING') {
+const feeling = (state = DEFAULT_RATING, action) => {
+    if (action.type === 'SET_FEELING') {
         return action.payload;
     } else if (action.type === 'RESET_ALL') {
-        return DEFAULT_STATE;
+        return DEFAULT_RATING;
     }
     return state;
 }
 
-const understandingRating = (state = DEFAULT_STATE, action) => {
-    if (action.type === 'SET_UNDERSTANDING_RATING') {
+const understanding = (state = DEFAULT_RATING, action) => {
+    if (action.type === 'SET_UNDERSTANDING') {
         return action.payload;
     } else if (action.type === 'RESET_ALL') {
-        return DEFAULT_STATE;
+        return DEFAULT_RATING;
     }
     return state;
 }
 
-const supportRating = (state = DEFAULT_STATE, action) => {
-    if (action.type === 'SET_SUPPORT_RATING') {
+const support = (state = DEFAULT_RATING, action) => {
+    if (action.type === 'SET_SUPPORT') {
         return action.payload;
     } else if (action.type === 'RESET_ALL') {
-        return DEFAULT_STATE;
+        return DEFAULT_RATING;
     }
     return state;
 }
 
-const comments = (state = DEFAULT_STATE, action) => {
+const comments = (state = DEFAULT_COMMENTS, action) => {
     if (action.type === 'SET_COMMENTS') {
         return action.payload;
     } else if (action.type === 'RESET_ALL') {
-        return DEFAULT_STATE;
+        return DEFAULT_COMMENTS;
     }
     return state;
 }
 
 const storeInstance = createStore(
     combineReducers({
-        feelingRating,
-        understandingRating,
-        supportRating,
+        feeling,
+        understanding,
+        support,
         comments,
     }),
     applyMiddleware(logger),

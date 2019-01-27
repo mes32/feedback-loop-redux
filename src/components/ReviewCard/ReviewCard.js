@@ -30,9 +30,9 @@ class ReviewCard extends Component {
     // Returns true if all required fields are filled out and this dataset is 
     // ready to submit to the server.
     readyToSubmit() {
-        const feeling = this.props.rs.feelingRating;
-        const understanding = this.props.rs.understandingRating;
-        const support = this.props.rs.supportRating;
+        const feeling = this.props.rs.feeling;
+        const understanding = this.props.rs.understanding;
+        const support = this.props.rs.support;
         if (feeling && understanding && support) {
             return true;
         }
@@ -42,9 +42,9 @@ class ReviewCard extends Component {
     // Sends the user's feedback to the server (via POST /prime-feeback)
     submit = (event) => {
         const feeback = {
-            feeling: this.props.rs.feelingRating,
-            understanding: this.props.rs.understandingRating,
-            support: this.props.rs.supportRating,
+            feeling: this.props.rs.feeling,
+            understanding: this.props.rs.understanding,
+            support: this.props.rs.support,
             comments: this.props.rs.comments,
         };
         axios({
@@ -63,9 +63,9 @@ class ReviewCard extends Component {
 
     // Display component on page
     render() {
-        const feeling = this.ratingOrSpacer(this.props.rs.feelingRating);
-        const understanding = this.ratingOrSpacer(this.props.rs.understandingRating);
-        const support = this.ratingOrSpacer(this.props.rs.supportRating);
+        const feeling = this.ratingOrSpacer(this.props.rs.feeling);
+        const understanding = this.ratingOrSpacer(this.props.rs.understanding);
+        const support = this.ratingOrSpacer(this.props.rs.support);
         return (
             <div>
                 <h2>Review Your Feedback</h2>

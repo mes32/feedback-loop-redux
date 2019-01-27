@@ -30,7 +30,7 @@ class Understanding extends Component {
     // the user's web browser to /form-part-3.
     pressedNext = (event) => {
         const action = {
-            type: 'SET_UNDERSTANDING_RATING',
+            type: 'SET_UNDERSTANDING',
             payload: this.state.rating.value,
         };
         this.props.dispatch(action);

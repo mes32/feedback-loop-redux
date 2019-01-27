@@ -29,7 +29,7 @@ class Support extends Component {
     // user's web browser to /form-part-4.
     pressedNext = (event) => {
         const action = {
-            type: 'SET_SUPPORT_RATING',
+            type: 'SET_SUPPORT',
             payload: this.state.rating.value,
         };
         this.props.dispatch(action);
