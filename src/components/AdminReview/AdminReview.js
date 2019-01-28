@@ -43,6 +43,21 @@ class AdminReview extends Component {
         });
     }
 
+    // Request to flag/unflag a feedback entry on the server (via route PUT /prime-feedback/:id)
+    flagFeedback = (feedback) => {
+        const id = feedback.id;
+        axios({
+            method: 'PUT',
+            url: `/prime-feedback/${id}`,
+        }).then((response) => {
+            this.getFeedback();
+        }).catch((error) => {
+            const errorMessage = `Server error: ${error}`;
+            console.log(errorMessage);
+            alert(errorMessage);
+        });
+    }
+
     // Request to delete a feedback entry from the server (via route DELETE /prime-feedback/:id)
     deleteFeedback = (feedback) => {
         const id = feedback.id;
@@ -64,7 +79,7 @@ class AdminReview extends Component {
     // Maps the feedback array from JSON to AdminFeedbackRow components
     displayFeebackArray = () => {
         return this.state.feedbackArray.map((feedback) => 
-            <AdminFeedbackRow key={feedback.id} feedback={feedback} deleteFeedback={this.deleteFeedback} />
+            <AdminFeedbackRow key={feedback.id} feedback={feedback} flagFeedback={this.flagFeedback} deleteFeedback={this.deleteFeedback} />
         );
     }
 
@@ -81,6 +96,7 @@ class AdminReview extends Component {
                                 <TableCell>Comprehension</TableCell>
                                 <TableCell>Support</TableCell>
                                 <TableCell>Comments</TableCell>
+                                <TableCell>Flag</TableCell>
                                 <TableCell>Delete</TableCell>
                             </TableRow>
                         </TableHead>
