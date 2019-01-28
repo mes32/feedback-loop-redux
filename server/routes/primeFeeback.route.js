@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 // Returns all feeback entries when requested via GET /prime-feeback
 router.get('/', (req, res) => {
     const sqlText = `
-    SELECT id, feeling, understanding, support, comments FROM "feedback"
+    SELECT id, feeling, understanding, support, comments, flagged FROM "feedback"
         ORDER BY id DESC
         LIMIT 200;
     `;

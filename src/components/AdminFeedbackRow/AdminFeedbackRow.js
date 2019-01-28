@@ -6,6 +6,8 @@ import TableRow from '@material-ui/core/TableRow';
 
 import React, { Component } from 'react';
 
+import './AdminFeedbackRow.css';
+
 class AdminFeedbackRow extends Component {
 
     // Call flagFeedback() in AdminReview on the current feedback item
@@ -20,17 +22,35 @@ class AdminFeedbackRow extends Component {
         this.props.deleteFeedback(feedback);
     }
 
+    // Determine the CSS class for this table row
+    getRowClass = () => {
+        if (this.props.feedback.flagged) {
+            return "flagged";
+        } else {
+            return "unflagged";
+        }
+    }
+
+    // Determine the color that should be used for the flag icon
+    getFlagIconColor = () => {
+        if (this.props.feedback.flagged) {
+            return "secondary";
+        } else {
+            return "default";
+        }
+    }
+
     // Display component on page
     render() {
         const feedback = this.props.feedback;
         return (
-            <TableRow>
+            <TableRow className={this.getRowClass()}>
                 <TableCell>{feedback.feeling}</TableCell>
                 <TableCell>{feedback.understanding}</TableCell>
                 <TableCell>{feedback.support}</TableCell>
                 <TableCell>{feedback.comments}</TableCell>
                 <TableCell>
-                    <IconButton onClick={this.flag} aria-label="Flag">
+                    <IconButton onClick={this.flag} color={this.getFlagIconColor()} aria-label="Flag">
                         <FlagIcon />
                     </IconButton>
                 </TableCell>
