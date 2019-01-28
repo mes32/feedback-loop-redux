@@ -1,4 +1,11 @@
 import axios from 'axios';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -23,9 +30,9 @@ class ReviewCard extends Component {
         const understanding = this.props.rs.understanding;
         const support = this.props.rs.support;
         if (feeling && understanding && support) {
-            return (<button onClick={this.submit}>Submit</button>);
+            return (<Button onClick={this.submit} variant="contained" color="primary">Submit</Button>);
         } else {
-            return (<button disabled>Incomplete</button>);
+            return (<Button disabled variant="contained" color="primary">Incomplete</Button>);
         } 
     }
 
@@ -44,7 +51,6 @@ class ReviewCard extends Component {
         }).then((response) => {
             this.props.history.push('/form-confirmation');
         }).catch((error) => {
-            // TODO: Optimize error display for users
             const errorMessage = `Server error: ${error}`;
             alert(errorMessage);
             console.log(errorMessage);
@@ -58,14 +64,28 @@ class ReviewCard extends Component {
         const support = this.ratingOrSpacer(this.props.rs.support);
         const comments = this.props.rs.comments;
         return (
-            <div>
-                <h2>Review Your Feedback</h2>
-                <p>Feelings: {feeling}</p>
-                <p>Understanding: {understanding}</p>
-                <p>Support: {support}</p>
-                <p>Comments: {comments}</p>
-                {this.submitButton()}
-            </div>
+            <Card>
+                <CardContent>
+                    <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
+                        Review Your Feedback
+                    </Typography>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
+                        Feelings: {feeling}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
+                        Understanding: {understanding}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
+                        Support: {support}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
+                        Comments: {comments}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    {this.submitButton()}
+                </CardActions>
+            </Card>
         );
     }
 }

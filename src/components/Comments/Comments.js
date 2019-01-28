@@ -1,3 +1,10 @@
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
@@ -15,10 +22,9 @@ class Comments extends Component {
     // When a text is typed in the input field...
     // Set the current comment text to match.
     enteredText = (event) => {
-        const commentText = event.target.value;
         this.setState({
-            commentText,
-        });
+            commentText: event.target.value,
+        });        
     }
 
     // When the 'Next' button is pressed...
@@ -38,9 +44,21 @@ class Comments extends Component {
         return (
             <div>
                 <Header />
-                <h2>Any comments you want to leave?</h2>
-                <input onChange={this.enteredText} type="text" placeholder="...your thoughts" />
-                <button onClick={this.pressedNext}>Next</button>
+                <Card>
+                    <CardContent>
+                        <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
+                            Any comments you want to leave?
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <TextField
+                            onChange={this.enteredText}
+                            label="Your thoughts..."
+                            defaultValue=""
+                        />
+                        <Button onClick={this.pressedNext} variant="contained" color="primary" size="small">Next</Button>
+                    </CardActions>
+                </Card>
                 <ReviewCard history={this.props.history} />
             </div>
         );

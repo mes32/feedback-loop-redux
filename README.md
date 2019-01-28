@@ -2,7 +2,7 @@
 This is a daily student feedback form similar to the form used at [Prime Digital Academy](https://primeacademy.io/). This application features a multi-page submission process with the student answering one survey question per page. It relies heavily on [Redux](https://redux.js.org/) to keep all this data easily accessible from the submission page.
 
 ## Utilized Web Stack
-- `User Interface` - [React](https://reactjs.org/)
+- `User Interface` - [React](https://reactjs.org/) with [Material-UI](https://material-ui.com/)
 - `Client` - React, [Redux](https://redux.js.org/) for conveniently sharing data across pages, [axios](https://www.npmjs.com/package/axios) for making HTTP requests to the server-side
 - `Server` - [Node.js](https://nodejs.org/en/) and the [Express](https://expressjs.com/) framework for handling HTTP requests from the client-side
 - `Database` - [PostgreSQL](https://www.postgresql.org/) via the Node.js library [pg](https://www.npmjs.com/package/pg)
@@ -31,9 +31,9 @@ git clone https://github.com/mes32/feedback-loop-redux
 createdb prime_feedback
 
 # 3. Create a table in 'prime_feedback' named 'feedback'
-#    - See database.sql for details
+#    - See data.sql for details
 
-# 4. Install node dependancies using NPM
+# 4. Install node dependencies using NPM
 npm install
 
 # 5. Start the Node.js server (runs on port 5000)
@@ -74,7 +74,7 @@ npm run client
 ![Screen Shot of Admin Page](./wireframes/screen-shot-admin.png)
 
 ## Documentation
-This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #4. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
+This application started as my [Prime Academy](https://primeacademy.io/) Weekend Project #5. The original scope document (i.e. the assignment instructions) can be found here: [scope-document.md](./scope-document.md).
 
 ### Completed Features
 - [x] Multi-page feedback submission form (until submitted client-side data is stored using Redux)
@@ -82,9 +82,9 @@ This application started as my [Prime Academy](https://primeacademy.io/) Weekend
 - [x] Saves student feedback on the server-side database
 - [x] Admin page shows history of all student feedback. Allows administrators to delete feedback entries from the database
 - [x] Update this README.md to describe the project in my own words
+- [x] Improve the styling of the app using Material-UI (theme, cards, snackbars, buttons, nav bar, and icons, etc)
 
 ### Next Steps
-- [ ] Improve the styling of the app using Material-UI (theme, cards, snackbars, buttons, nav bar, and icons, etc)
 - [ ] Ability to flag feedback entries for further review on the Administrator Page
 - [ ] Deploy the application to Heroku
 

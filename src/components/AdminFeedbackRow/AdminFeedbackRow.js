@@ -1,3 +1,8 @@
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+
 import React, { Component } from 'react';
 
 class AdminFeedbackRow extends Component {
@@ -12,13 +17,17 @@ class AdminFeedbackRow extends Component {
     render() {
         const feedback = this.props.feedback;
         return (
-            <tr>
-                <td>{feedback.feeling}</td>
-                <td>{feedback.understanding}</td>
-                <td>{feedback.support}</td>
-                <td>{feedback.comments}</td>
-                <td><button onClick={this.delete}>Delete</button></td>
-            </tr>
+            <TableRow>
+                <TableCell>{feedback.feeling}</TableCell>
+                <TableCell>{feedback.understanding}</TableCell>
+                <TableCell>{feedback.support}</TableCell>
+                <TableCell>{feedback.comments}</TableCell>
+                <TableCell>
+                    <IconButton onClick={this.delete} aria-label="Delete">
+                        <DeleteIcon />
+                    </IconButton>
+                </TableCell>
+            </TableRow>
         );
     }
 }

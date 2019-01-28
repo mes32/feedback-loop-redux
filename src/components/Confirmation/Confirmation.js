@@ -1,3 +1,9 @@
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
@@ -18,8 +24,16 @@ class Confirmation extends Component {
         return (
             <div>
                 <Header heading='Thank You!' />
-                <h2>Thank you for your feedback</h2>
-                <button onClick={this.pressedContinue}>Leave New Feedback</button>
+                <Card>
+                    <CardContent>
+                        <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
+                            Thanks for leaving your feedback
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button onClick={this.pressedContinue} variant="contained" color="primary">Leave New Feedback</Button>
+                    </CardActions>
+                </Card>
             </div>
         );
     }
