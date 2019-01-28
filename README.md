@@ -2,7 +2,7 @@
 This is a daily student feedback form similar to the form used at [Prime Digital Academy](https://primeacademy.io/). This application features a multi-page submission process with the student answering one survey question per page. It relies heavily on [Redux](https://redux.js.org/) to keep all this data easily accessible from the submission page.
 
 ## Utilized Web Stack
-- `User Interface` - [React](https://reactjs.org/)
+- `User Interface` - [React](https://reactjs.org/) with [Material-UI](https://material-ui.com/)
 - `Client` - React, [Redux](https://redux.js.org/) for conveniently sharing data across pages, [axios](https://www.npmjs.com/package/axios) for making HTTP requests to the server-side
 - `Server` - [Node.js](https://nodejs.org/en/) and the [Express](https://expressjs.com/) framework for handling HTTP requests from the client-side
 - `Database` - [PostgreSQL](https://www.postgresql.org/) via the Node.js library [pg](https://www.npmjs.com/package/pg)
@@ -33,7 +33,7 @@ createdb prime_feedback
 # 3. Create a table in 'prime_feedback' named 'feedback'
 #    - See data.sql for details
 
-# 4. Install node dependancies using NPM
+# 4. Install node dependencies using NPM
 npm install
 
 # 5. Start the Node.js server (runs on port 5000)

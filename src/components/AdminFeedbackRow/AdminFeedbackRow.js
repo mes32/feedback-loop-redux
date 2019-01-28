@@ -1,3 +1,7 @@
+import Button from '@material-ui/core/Button';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+
 import React, { Component } from 'react';
 
 class AdminFeedbackRow extends Component {
@@ -12,13 +16,13 @@ class AdminFeedbackRow extends Component {
     render() {
         const feedback = this.props.feedback;
         return (
-            <tr>
-                <td>{feedback.feeling}</td>
-                <td>{feedback.understanding}</td>
-                <td>{feedback.support}</td>
-                <td>{feedback.comments}</td>
-                <td><button onClick={this.delete}>Delete</button></td>
-            </tr>
+            <TableRow>
+                <TableCell>{feedback.feeling}</TableCell>
+                <TableCell>{feedback.understanding}</TableCell>
+                <TableCell>{feedback.support}</TableCell>
+                <TableCell>{feedback.comments}</TableCell>
+                <TableCell><Button onClick={this.delete}>Delete</Button></TableCell>
+            </TableRow>
         );
     }
 }

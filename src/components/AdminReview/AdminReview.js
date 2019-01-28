@@ -1,4 +1,12 @@
 import axios from 'axios';
+
+import Paper from '@material-ui/core/Paper';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -65,20 +73,22 @@ class AdminReview extends Component {
         return (
             <div>
                 <Header heading="Admin Review" subHeading="Feedback Results" />
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feeling</th>
-                            <th>Comprehension</th>
-                            <th>Support</th>
-                            <th>Comments</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.displayFeebackArray()}
-                    </tbody>
-                </table>
+                <Paper>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Feeling</TableCell>
+                                <TableCell>Comprehension</TableCell>
+                                <TableCell>Support</TableCell>
+                                <TableCell>Comments</TableCell>
+                                <TableCell>Delete</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {this.displayFeebackArray()}
+                        </TableBody>
+                    </Table>
+                </Paper>
             </div>
         );
     }
