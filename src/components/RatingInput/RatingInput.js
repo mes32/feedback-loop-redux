@@ -1,5 +1,13 @@
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import Header from '../Header/Header.js';
 import Rating from '../../classes/Rating.js';
 import ReviewCard from '../ReviewCard/ReviewCard.js';
@@ -42,9 +50,21 @@ class RatingInput extends Component {
         return (
             <div>
                 <Header />
-                <h2>{this.props.prompt}</h2>
-                <input onChange={this.enteredNumber} type="number" placeholder="(1 thru 5)" />
-                <button onClick={this.pressedNext} disabled={!this.state.readyNext}>Next</button>
+                <Card>
+                    <CardContent>
+                        <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
+                            {this.props.prompt}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <TextField
+                            onChange={this.enteredNumber} type="number"
+                            label="Rate: 1 thru 5"
+                            defaultValue=""
+                        />
+                        <Button onClick={this.pressedNext} disabled={!this.state.readyNext} color="primary" size="small">Next</Button>
+                    </CardActions>
+                </Card>
                 <ReviewCard history={this.props.history} />
             </div>
         );

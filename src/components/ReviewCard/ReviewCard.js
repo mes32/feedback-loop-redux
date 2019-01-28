@@ -51,7 +51,6 @@ class ReviewCard extends Component {
         }).then((response) => {
             this.props.history.push('/form-confirmation');
         }).catch((error) => {
-            // TODO: Optimize error display for users
             const errorMessage = `Server error: ${error}`;
             alert(errorMessage);
             console.log(errorMessage);
@@ -70,22 +69,21 @@ class ReviewCard extends Component {
                     <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
                         Review Your Feedback
                     </Typography>
-                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
                         Feelings: {feeling}
                     </Typography>
-                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
                         Understanding: {understanding}
                     </Typography>
-                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
                         Support: {support}
                     </Typography>
-                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                    <Typography color="textPrimary" variant="body2" paragraph={true}>
                         Comments: {comments}
                     </Typography>
                 </CardContent>
                 <CardActions>
                     {this.submitButton()}
-                    {/* <Button size="small">Learn More</Button> */}
                 </CardActions>
             </Card>
         );

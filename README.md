@@ -31,7 +31,7 @@ git clone https://github.com/mes32/feedback-loop-redux
 createdb prime_feedback
 
 # 3. Create a table in 'prime_feedback' named 'feedback'
-#    - See database.sql for details
+#    - See data.sql for details
 
 # 4. Install node dependancies using NPM
 npm install
