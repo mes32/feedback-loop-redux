@@ -83,9 +83,9 @@ This application started as my [Prime Academy](https://primeacademy.io/) Weekend
 - [x] Admin page shows history of all student feedback. Allows administrators to delete feedback entries from the database
 - [x] Update this README.md to describe the project in my own words
 - [x] Improve the styling of the app using Material-UI (theme, cards, snackbars, buttons, nav bar, and icons, etc)
+- [x] Ability to flag feedback entries for further review on the Administrator Page
 
 ### Next Steps
-- [ ] Ability to flag feedback entries for further review on the Administrator Page
 - [ ] Deploy the application to Heroku
 
 ## Deployment

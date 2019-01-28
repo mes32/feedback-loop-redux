@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
 // Returns all feeback entries when requested via GET /prime-feeback
 router.get('/', (req, res) => {
     const sqlText = `
-    SELECT id, feeling, understanding, support, comments FROM "feedback"
+    SELECT id, feeling, understanding, support, comments, flagged FROM "feedback"
         ORDER BY id DESC
         LIMIT 200;
     `;
@@ -30,6 +30,22 @@ router.get('/', (req, res) => {
         res.send(sqlResult.rows);
     }).catch(function (sqlError) {
         console.log(`SQL error in GET /prime-feedback, ${sqlError}`);
+        res.sendStatus(500);
+    });
+});
+
+// Flags/unflags one feeback entry when requested via PUT /prime-feeback/:id
+router.put('/:id', (req, res) => {
+    const id = req.params.id;
+    const sqlText = `
+    UPDATE "feedback"
+        SET flagged = NOT flagged
+        WHERE id = $1;
+    `;
+    pool.query(sqlText, [id]).then(function (sqlResult) {
+        res.sendStatus(200);
+    }).catch(function (sqlError) {
+        console.log(`SQL error in PUT /prime-feedback/:id, ${sqlError}`);
         res.sendStatus(500);
     });
 });
