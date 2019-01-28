@@ -56,7 +56,7 @@ class Comments extends Component {
                             label="Your thoughts..."
                             defaultValue=""
                         />
-                        <Button onClick={this.pressedNext} color="primary" size="small">Next</Button>
+                        <Button onClick={this.pressedNext} variant="contained" color="primary" size="small">Next</Button>
                     </CardActions>
                 </Card>
                 <ReviewCard history={this.props.history} />

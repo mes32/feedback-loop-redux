@@ -31,7 +31,7 @@ class Confirmation extends Component {
                         </Typography>
                     </CardContent>
                     <CardActions>
-                        <Button onClick={this.pressedContinue} color="primary">Leave New Feedback</Button>
+                        <Button onClick={this.pressedContinue} variant="contained" color="primary">Leave New Feedback</Button>
                     </CardActions>
                 </Card>
             </div>

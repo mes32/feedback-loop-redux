@@ -30,9 +30,9 @@ class ReviewCard extends Component {
         const understanding = this.props.rs.understanding;
         const support = this.props.rs.support;
         if (feeling && understanding && support) {
-            return (<Button color="primary" onClick={this.submit}>Submit</Button>);
+            return (<Button onClick={this.submit} variant="contained" color="primary">Submit</Button>);
         } else {
-            return (<Button color="primary" disabled>Incomplete</Button>);
+            return (<Button disabled variant="contained" color="primary">Incomplete</Button>);
         } 
     }
 

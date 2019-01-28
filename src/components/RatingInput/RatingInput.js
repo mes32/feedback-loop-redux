@@ -62,7 +62,7 @@ class RatingInput extends Component {
                             label="Rate: 1 thru 5"
                             defaultValue=""
                         />
-                        <Button onClick={this.pressedNext} disabled={!this.state.readyNext} color="primary" size="small">Next</Button>
+                        <Button onClick={this.pressedNext} disabled={!this.state.readyNext} variant="contained" color="primary" size="small">Next</Button>
                     </CardActions>
                 </Card>
                 <ReviewCard history={this.props.history} />
