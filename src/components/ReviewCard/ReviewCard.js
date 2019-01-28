@@ -1,4 +1,11 @@
 import axios from 'axios';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -23,9 +30,9 @@ class ReviewCard extends Component {
         const understanding = this.props.rs.understanding;
         const support = this.props.rs.support;
         if (feeling && understanding && support) {
-            return (<button onClick={this.submit}>Submit</button>);
+            return (<Button color="primary" onClick={this.submit}>Submit</Button>);
         } else {
-            return (<button disabled>Incomplete</button>);
+            return (<Button color="primary" disabled>Incomplete</Button>);
         } 
     }
 
@@ -58,14 +65,29 @@ class ReviewCard extends Component {
         const support = this.ratingOrSpacer(this.props.rs.support);
         const comments = this.props.rs.comments;
         return (
-            <div>
-                <h2>Review Your Feedback</h2>
-                <p>Feelings: {feeling}</p>
-                <p>Understanding: {understanding}</p>
-                <p>Support: {support}</p>
-                <p>Comments: {comments}</p>
-                {this.submitButton()}
-            </div>
+            <Card>
+                <CardContent>
+                    <Typography color="textSecondary" variant="h5" component="h2" gutterBottom={true}>
+                        Review Your Feedback
+                    </Typography>
+                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                        Feelings: {feeling}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                        Understanding: {understanding}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                        Support: {support}
+                    </Typography>
+                    <Typography color="textPrimary" variant="body1" gutterBottom={true}>
+                        Comments: {comments}
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    {this.submitButton()}
+                    {/* <Button size="small">Learn More</Button> */}
+                </CardActions>
+            </Card>
         );
     }
 }
